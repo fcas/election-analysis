@@ -17,7 +17,7 @@ __sentilex_path = "sentilex.csv"
 __sentilex_index_path = Path("sentilex_index.csv")
 __static_files_path = "./static_files"
 
-tweets_path = Path("DebateNaBand_1610_1610_tweets_only.csv")
+tweets_path = Path("data/debatenaband/DebateNaBand_1610_1610_tweets_only.csv")
 
 
 def get_sentiment(x):
@@ -36,7 +36,7 @@ else:
 if tweets_path.is_file():
     tweets = pd.read_csv(tweets_path)
 else:
-    raw_data = pd.read_csv("DebateNaBand_1610_1610_original.csv")
+    raw_data = pd.read_csv("data/debatenaband/DebateNaBand_1610_1610_original.csv")
     tweets = raw_data[["created_at", "conversation_id", "text", "context_annotations"]]
     tweets.to_csv(tweets_path)
 
