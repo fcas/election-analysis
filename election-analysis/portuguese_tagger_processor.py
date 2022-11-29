@@ -6,7 +6,7 @@ from nltk.corpus import floresta
 from nltk.tag import UnigramTagger
 from nltk.tokenize import TweetTokenizer
 
-__tagger_path = "portuguese_tagger.pickle"
+__tagger_path = "static_files/portuguese_tagger.pickle"
 __tweet_tokenizer = TweetTokenizer(strip_handles=True, reduce_len=True)
 
 
@@ -19,7 +19,7 @@ def __create_tagger():
 
 
 def __save_tagger(tagger):
-    file = open('portuguese_tagger.pickle', 'wb')
+    file = open('static_files/portuguese_tagger.pickle', 'wb')
     pickle.dump(tagger, file)
     file.close()
 
@@ -27,7 +27,7 @@ def __save_tagger(tagger):
 def get_tagger():
     if os.path.isfile(__tagger_path) is False:
         __save_tagger(__create_tagger())
-    file = open('portuguese_tagger.pickle', 'rb')
+    file = open('static_files/portuguese_tagger.pickle', 'rb')
     return pickle.load(file)
 
 

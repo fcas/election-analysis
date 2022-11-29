@@ -13,8 +13,8 @@ from settings import abrevilex
 logger = logging.getLogger(__name__)
 
 __output_path = "data/result.json"
-__sentilex_path = "sentilex.csv"
-__sentilex_index_path = Path("sentilex_index.csv")
+__sentilex_path = "static_files/sentilex.csv"
+__sentilex_index_path = Path("static_files/sentilex_index.csv")
 __static_files_path = "./static_files"
 
 tweets_path = Path("data/debatenaband/DebateNaBand_1610_1610_tweets_only.csv")
